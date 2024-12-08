@@ -65,7 +65,7 @@
   pointer-events: none; /* Impede que o label interfira na interação com o input */
 }
 
-/* Quando o campo for focado ou preenchido, o label sobe */
+
 .formGroup input:focus + label,
 .formGroup input:not(:placeholder-shown) + label,
 .formGroup textarea:focus + label,

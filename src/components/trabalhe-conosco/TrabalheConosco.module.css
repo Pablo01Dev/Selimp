@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 40px; /* Espaço entre os cartões */
+    margin: 6em;
+    border-radius: 10px;
+    padding: 5em 7em 5em 7em;
+    background-color: #0E246D;
+    color: white;
+  }
+
+  .container p {
+    margin: 0 6em 0 6em;
+    color: white;
+  }
+
+  .container h1 {
+    text-align: center;
+    color: white;
+    font-size: 30px;
+  }
+  

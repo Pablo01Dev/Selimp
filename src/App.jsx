@@ -6,6 +6,7 @@ import OQueFazemos from './components/o-que-fazemos/oquefazemos'
 import QuemSomos from './components/quem-somos/quemSomos'
 import Contato from './components/contato/contato.jsx'
 import './App.css'
+import TrabalheConosco from './components/trabalhe-conosco/TrabalheConosco.jsx'
 
 
 
@@ -17,8 +18,10 @@ function App() {
       <Description />
       <OQueFazemos />
       <QuemSomos />
+      <TrabalheConosco />
       <Contato />
       <Footer />
+      
 
     </>
   )
