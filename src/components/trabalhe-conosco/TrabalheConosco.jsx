@@ -4,13 +4,14 @@ import trabalhador from "../../assets/trabalhe-conosco.png";
 const TrabalheConosco = () => {
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.texto}>
         <h1>Trabalhe conosco!</h1>
         <h2>Venha fazer parte do nosso time!</h2>
-        <button>clique aqui</button>
+        <button class="button">Clique Aqui</button>
+
       </div>
-      <div>
-        <img src="../assets/trabalhe-conosco.png" alt="" />
+      <div className={styles.imagem}>
+        <img src={trabalhador} alt="tralbalhador" />
       </div>
 
     </div>

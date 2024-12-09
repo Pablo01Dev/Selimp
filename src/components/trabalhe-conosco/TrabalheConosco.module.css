@@ -1,23 +1,58 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px; /* Espaço entre os cartões */
-    margin: 6em;
-    border-radius: 10px;
-    padding: 5em 7em 5em 7em;
-    background-color: #0E246D;
-    color: white;
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 6em;
+  border-radius: 10px;
+  padding: 2em 2em;
+  background-color: #e0e0e0;
+  color: rgb(24, 24, 24);
+}
 
-  .container p {
-    margin: 0 6em 0 6em;
-    color: white;
-  }
+.texto {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30%;
+  text-align: center;
+  gap: .5em;
+}
 
-  .container h1 {
-    text-align: center;
-    color: white;
-    font-size: 30px;
-  }
-  
+.texto h1 {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.texto h2 {
+  font-size: 20px;
+}
+
+.texto button {
+  text-decoration: none;
+  background-color: #0E246D;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.texto button:hover {
+  background-color: #0b1d55;
+}
+
+.imagem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+}
+
+.imagem img {
+  width: 70%;
+}
