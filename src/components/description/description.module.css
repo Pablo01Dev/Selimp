@@ -23,13 +23,13 @@
 }
 
 h3 {
-  font-size: 1.25rem;
+  font-size: 18px;
   color: #0e246d; /* Azul escuro */
   font-weight: bold;
 }
 
 p {
-  font-size: 1rem;
+  font-size: 15px;
   color: #333333; /* Cinza escuro */
   line-height: 1.5; /* Melhor leitura */
 }

@@ -20,7 +20,7 @@
 }
 
 .textContent {
-  margin-top: 2em;
+  margin-top: 5em;
   margin-left: 8em;
   position: absolute;
   display: flex;
@@ -32,7 +32,7 @@
 }
 
 .textContent h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 0;
 }
@@ -46,7 +46,7 @@
   position: absolute;
   bottom: 0;
   right: 10rem;
-  max-height: 86%;
+  max-height: 78%;
   object-fit: contain;
   z-index: 1;
 }

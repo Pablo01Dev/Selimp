@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './header.module.css';
-import Selimplogo from "../../assets/Selimp.png"
+import Selimplogo from "../../assets/Selimp.png";
 
 function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,31 +45,50 @@ function Header() {
     setMenuActive((prev) => !prev);
   };
 
+  // Scroll com offset ajustado
+  const scrollToSection = (event, sectionId) => {
+    event.preventDefault(); // Evita o comportamento padrão do link
+
+    const target = document.querySelector(sectionId);
+    const offset = target.getBoundingClientRect().top + window.scrollY - 80; // Ajuste para altura do Header
+    window.scrollTo({
+      top: offset,
+      behavior: 'smooth',
+    });
+
+    // Fecha o menu em telas pequenas
+    if (isSmallScreen) {
+      setMenuActive(false);
+    }
+  };
+
   return (
-    <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
-      <a href="#home">
-        <img
-          className={styles.logo}
-          src= {Selimplogo}
-          alt="Logo Selimp"
-        />
-      </a>
-      <nav className={styles.nav} ref={menuRef}>
-        {/* Botão de Hambúrguer (só aparece em telas pequenas) */}
-        {isSmallScreen && (
-          <div className={styles.menuToggle} onClick={toggleMenu}>
-            {menuActive ? '' : '☰'}
-          </div>
-        )}
-        {/* Menu Responsivo */}
-        <ul className={`${menuActive ? styles.active : ''} ${styles.menu}`}>
-          <li><a href="#home" onClick={toggleMenu}>Home</a></li>
-          <li><a href="#nossos-servicos" onClick={toggleMenu}>Nossos Serviços</a></li>
-          <li><a href="#sobre" onClick={toggleMenu}>Sobre</a></li>
-          <li><a href="#contato" onClick={toggleMenu}>Contato</a></li>
-        </ul>
-      </nav>
-    </header>
+    <section id="header">
+      <header className={`${styles.header} ${isScrolled ? styles.scrolled : ''}`}>
+        <a href="#home">
+          <img
+            className={styles.logo}
+            src={Selimplogo}
+            alt="Logo Selimp"
+          />
+        </a>
+        <nav className={styles.nav} ref={menuRef}>
+          {/* Botão de Hambúrguer (só aparece em telas pequenas) */}
+          {isSmallScreen && (
+            <div className={styles.menuToggle} onClick={toggleMenu}>
+              {menuActive ? '' : '☰'}
+            </div>
+          )}
+          {/* Menu Responsivo */}
+          <ul className={`${menuActive ? styles.active : ''} ${styles.menu}`}>
+            <li><a href="#home" onClick={(e) => scrollToSection(e, "#home")}>Home</a></li>
+            <li><a href="#nossos-servicos" onClick={(e) => scrollToSection(e, "#nossos-servicos")}>Nossos Serviços</a></li>
+            <li><a href="#sobre" onClick={(e) => scrollToSection(e, "#sobre")}>Sobre</a></li>
+            <li><a href="#contato" onClick={(e) => scrollToSection(e, "#contato")}>Contato</a></li>
+          </ul>
+        </nav>
+      </header>
+    </section>
   );
 }
 

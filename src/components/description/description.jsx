@@ -4,7 +4,7 @@ import styles from "./description.module.css"
 
 function Description() {
   return (
-    <section className={styles.description}>
+    <section id="description" className={styles.description}>
       <div className={styles.item}>
         <img
           className={styles.icon}

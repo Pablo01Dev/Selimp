@@ -1,8 +1,8 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 5em; /* Espaço entre os cartões */
-  margin: 0 7em;
+  gap: 10em; /* Espaço entre os cartões */
+  margin: 0 10em;
   padding: 2em;
 }
 
@@ -20,7 +20,7 @@
   background: #e4e4e4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-right: -6em;
+  margin-right: -7em;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -34,7 +34,7 @@
   background: #e4e4e4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-left: -6em; /* Ajuste simétrico */
+  margin-left: -7em; /* Ajuste simétrico */
   text-align: end;
   display: flex;
   flex-direction: column;
@@ -44,17 +44,19 @@
 
 /* Estilo dos títulos */
 .text h2, .text2 h2 {
-  font-size: 24px;
+  font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
+  color: #0e246d;
 }
 
 /* Parágrafos e listas */
 .text p, .text li,
 .text2 p, .text2 li {
-  font-size: 16px;
+  font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.5;
+  
 }
 
 /* Alinhamento adicional para listas do .text2 */
