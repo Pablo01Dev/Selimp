@@ -1,24 +1,48 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 40px; /* Espaço entre os cartões */
-    margin: 11em;
-    border-radius: 10px;
-    padding: 5em 7em 5em 7em;
-    background-color: #0E246D;
-    color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+  border-radius: 10px;
+  background-color: #0E246D;
+  color: white;
+  opacity: 0; /* Inicialmente invisível */
+  transition: opacity 1.5s ease-in-out; /* Suaviza a transição de opacidade */
+  padding: 5em 7em;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  max-width: 1200px; /* Largura máxima para a container */
+  margin: 12em auto; /* Centraliza o conteúdo */
+
+}
+
+
+.container.visible {
+  opacity: 1; /* Torna o componente visível quando a classe "visible" é aplicada */
+}
+
+.container p {
+  margin: 0 7.5em;
+  color: white;
+  font-size: 15px;
+}
+
+.container h1 {
+  text-align: center;
+  color: white;
+  font-size: 18px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    margin: 2em;
+    padding: 3em;
   }
 
   .container p {
-    margin: 0 7.5em 0 7.5em;
-    color: white;
-    font-size: 15px;
+    margin: 0 2em;
   }
 
   .container h1 {
-    text-align: center;
-    color: white;
-    font-size: 18px;
+    font-size: 16px;
   }
-  
+}

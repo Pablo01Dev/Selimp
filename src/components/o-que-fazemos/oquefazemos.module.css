@@ -1,19 +1,26 @@
 .container {
   display: flex;
   flex-direction: column;
-  gap: 10em; /* Espaço entre os cartões */
-  margin: 0 10em;
+  gap: 10em;
   padding: 2em;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  max-width: 1200px; /* Largura máxima para a container */
+  margin: 0 auto; /* Centraliza o conteúdo */
 }
 
 .card {
   display: flex;
   align-items: center;
   overflow: hidden;
-  position: relative; /* Necessário para o controle de camadas */
+  position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Transição suave para opacidade */
 }
 
-/* Estilo para o .text */
+.card.visible {
+  opacity: 1; /* Torna o card visível quando entra na viewport */
+}
+
 .text {
   flex: 1;
   padding: 4em 10em 4em 4em;
@@ -24,25 +31,23 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1; /* Garante que fique atrás da imagem */
+  z-index: 1;
 }
 
-/* Estilo para o .text2 */
 .text2 {
   flex: 1;
   padding: 4em 4em 4em 10em;
   background: #e4e4e4;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin-left: -7em; /* Ajuste simétrico */
+  margin-left: -7em;
   text-align: end;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  z-index: 1; /* Garante que fique atrás da imagem */
+  z-index: 1;
 }
 
-/* Estilo dos títulos */
 .text h2, .text2 h2 {
   font-size: 18px;
   font-weight: bold;
@@ -50,33 +55,71 @@
   color: #0e246d;
 }
 
-/* Parágrafos e listas */
 .text p, .text li,
 .text2 p, .text2 li {
   font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.5;
-  
 }
 
-/* Alinhamento adicional para listas do .text2 */
 .text2 p, .text2 li {
-  margin-left: 0; /* Remove margens extras */
+  margin-left: 0;
 }
 
-/* Estilo para a imagem */
 .image {
   flex: 1;
-  display: flex; /* Centraliza a imagem */
+  display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2; /* Garante que a imagem fique na frente do texto */
+  z-index: 2;
   position: relative;
+  opacity: 0;
+  transition: opacity 1s ease-out; /* Transição suave para opacidade */
+}
+
+.image.visible {
+  opacity: 1; /* Torna a imagem visível quando o observador entra em ação */
 }
 
 .image img {
-  width: 100%; /* Garante que ocupe toda a div */
-  max-width: 500px; /* Limita o tamanho máximo */
+  width: 100%;
+  max-width: 500px;
   border-radius: 8px;
-  object-fit: cover; /* Ajusta proporções */
+  object-fit: cover;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin: 0 1em; /* Margem para garantir que o conteúdo não fique colado nas bordas */
+    padding: 2em 0;
+  }
+
+  .card {
+    flex-direction: column;
+  }
+
+  .text, .text2 {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 2em;
+  }
+
+  .text2 {
+    text-align: left;
+  }
+
+  .image img {
+    max-width: 100%;
+  }
+
+  /* Ajuste de fonte para telas menores usando 'vw' também */
+  .text h2, .text2 h2 {
+    font-size: 4vw; /* Ajustado para telas menores */
+  }
+
+  .text p, .text li,
+  .text2 p, .text2 li {
+    font-size: 2.5vw; /* Ajustado para telas menores */
+  }
 }

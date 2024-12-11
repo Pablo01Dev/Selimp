@@ -1,4 +1,14 @@
-/* Estilo geral do container */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: row;
@@ -10,21 +20,32 @@
   text-align: center;
   margin-left: 6.3em;
   margin-bottom: 5em;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Estilo para a seção com imagem e botão */
-.container .wpp {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
+.container.visible {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
-/* Estilo para a imagem do especialista */
+.container:hover {
+  transform: scale(1.02);
+  opacity: 0.95;
+}
+
 .wpp img {
-  max-width: 300px; /* Limita o tamanho máximo */
-  width: 100%; /* Faz a imagem ocupar toda a largura disponível, sem ultrapassar o limite */
-  height: auto; /* Mantém a proporção da imagem */
+  max-width: 300px;
+  width: 100%;
+  height: auto;
   margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.wpp img.visible {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.wpp img:hover {
+  transform: scale(1.05);
 }
 
 .wpp h2 {
@@ -33,9 +54,9 @@
   margin-bottom: 1em;
   margin-left: 1.6em;
   font-weight: bold;
+  text-align: left;
 }
 
-/* Estilo do formulário */
 .form {
   display: flex;
   flex-direction: column;
@@ -46,17 +67,19 @@
   gap: 1rem;
   max-height: 600px;
   overflow: auto;
-  position: relative; /* Necessário para posicionar o botão à direita */
+  position: relative;
 }
 
-/* Estilo das seções do formulário */
+.form.visible {
+  animation: fadeInUp 0.8s ease forwards;
+}
+
 .formGroup {
   position: relative;
   display: flex;
   flex-direction: column;
 }
 
-/* Estilo do label dentro da caixa de entrada */
 .formGroup label {
   font-size: 14px;
   font-weight: bold;
@@ -65,9 +88,8 @@
   left: 10px;
   top: 15px;
   transition: 0.3s ease all;
-  pointer-events: none; /* Impede que o label interfira na interação com o input */
+  pointer-events: none;
 }
-
 
 .formGroup input:focus + label,
 .formGroup input:not(:placeholder-shown) + label,
@@ -79,27 +101,24 @@
   color: #0E246D;
 }
 
-/* Estilo dos campos de entrada */
 .formGroup input, .formGroup textarea {
   padding: 0.5rem;
   font-size: 15px;
-  border: none; /* Remover a borda */
-  border-radius: 8px; /* Mantém o border-radius */
+  border: none;
+  border-radius: 8px;
   background-color: #e7e7e7;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* Remover a borda ao focar */
 .formGroup input:focus, .formGroup textarea:focus {
-  outline: none; /* Remove o contorno ao focar no campo */
+  outline: none;
 }
 
 .formGroup input::placeholder, .formGroup textarea::placeholder {
-  visibility: hidden; /* Oculta o placeholder enquanto o label estiver presente */
+  visibility: hidden;
 }
 
-/* Estilo do botão de envio */
 .submitBtn {
   padding: 0.5rem 2rem;
   background-color: #0E246D;
@@ -108,16 +127,20 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
   align-self: flex-end;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
+}
+
+.submitBtn.visible {
+  animation: fadeInUp 0.8s ease forwards;
 }
 
 .submitBtn:hover {
   background-color: #041264;
+  transform: translateY(-3px);
 }
 
-/* Espaçador entre os elementos */  
 .espacer {
   background-color: #ebebeb;
   width: 0.3em;
@@ -126,12 +149,62 @@
   border-radius: 10px;
 }
 
-.wpp h2 {
-  text-align: left;
+/* Responsividade */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    margin-left: 2em;
+  }
+
+  .form {
+    width: 90%;
+    max-width: 400px;
+  }
+
+  .wpp h2 {
+    font-size: 20px;
+    margin-left: 0;
+  }
 }
 
-.wpp a img {
-  max-width: 230px; /* Diminui o tamanho máximo da imagem */
-  width: 100%; /* Garante que a imagem ocupe toda a largura disponível, mas respeite o limite */
-  height: auto; /* Mantém a proporção da imagem */
+@media (max-width: 768px) {
+  .container {
+    padding: 2rem;
+    gap: 1rem;
+  }
+
+  .wpp img {
+    max-width: 200px;
+  }
+
+  .form {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .submitBtn {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .wpp img {
+    max-width: 150px;
+  }
+
+  .wpp h2 {
+    font-size: 18px;
+  }
+
+  .form {
+    padding: 0.5rem;
+  }
+
+  .submitBtn {
+    padding: 0.5rem 1.5rem;
+  }
 }

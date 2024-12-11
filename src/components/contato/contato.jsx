@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './contato.module.css';
 import atendente from "../../assets/atendente.png";
 import button from "../../assets/button.png";
@@ -16,35 +16,62 @@ const Contato = () => {
         setFormState({ ...formState, [name]: value });
     };
 
+    // Refs para os elementos que queremos observar
+    const containerRef = useRef(null);
+    const wppImgRef = useRef(null);
+    const formRef = useRef(null);
+    const submitBtnRef = useRef(null);
+
+    useEffect(() => {
+        const options = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add(styles.visible);
+                    observer.unobserve(entry.target); // Para não observar mais depois de visível
+                }
+            });
+        }, options);
+
+        // Observar os elementos
+        observer.observe(containerRef.current);
+        observer.observe(wppImgRef.current);
+        observer.observe(formRef.current);
+        observer.observe(submitBtnRef.current);
+
+        return () => {
+            observer.disconnect(); // Limpar o observer
+        };
+    }, []);
+
     return (
         <section id="contato">
             <div className={styles.subContainer}>
-                <div className={styles.container}>
-                    <div className={styles.wpp}>
-                        <img src={atendente} alt="" />
+                <div className={styles.container} ref={containerRef}>
+                    <div className={styles.wpp} ref={wppImgRef}>
+                        <img src={atendente} alt="Atendente" />
                         <h2>Fale agora<br />com um especialista</h2>
-                        <a href="">
-                            <img src={button} alt="" />
+                        <a href="https://wa.me/1234567890">
+                            <img src={button} alt="Whatsapp Button" />
                         </a>
                     </div>
 
-                    <div className={styles.espacer}>
-                        <p></p>
-                    </div>
+                    <div className={styles.espacer}></div>
 
                     {/* Formulário atualizado */}
                     <form
                         className={styles.form}
                         method="POST"
                         action="/backend/processa_formulario.php"
+                        ref={formRef}
                     >
                         <div className={styles.formGroup}>
-                            <label
-                                htmlFor="name"
-                                style={{ display: formState.name.length > 0 ? 'none' : 'block' }}
-                            >
-                                Nome:
-                            </label>
+                            <label htmlFor="name">Nome:</label>
                             <input
                                 type="text"
                                 id="name"
@@ -52,16 +79,12 @@ const Contato = () => {
                                 required
                                 value={formState.name}
                                 onChange={handleInputChange}
+                                placeholder="Seu Nome"
                             />
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label
-                                htmlFor="email"
-                                style={{ display: formState.email.length > 0 ? 'none' : 'block' }}
-                            >
-                                E-mail:
-                            </label>
+                            <label htmlFor="email">E-mail:</label>
                             <input
                                 type="email"
                                 id="email"
@@ -69,16 +92,12 @@ const Contato = () => {
                                 required
                                 value={formState.email}
                                 onChange={handleInputChange}
+                                placeholder="Seu E-mail"
                             />
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label
-                                htmlFor="telefone"
-                                style={{ display: formState.telefone.length > 0 ? 'none' : 'block' }}
-                            >
-                                Telefone:
-                            </label>
+                            <label htmlFor="telefone">Telefone:</label>
                             <input
                                 type="tel"
                                 id="telefone"
@@ -86,16 +105,12 @@ const Contato = () => {
                                 required
                                 value={formState.telefone}
                                 onChange={handleInputChange}
+                                placeholder="Seu Telefone"
                             />
                         </div>
 
                         <div className={styles.formGroup}>
-                            <label
-                                htmlFor="message"
-                                style={{ display: formState.message.length > 0 ? 'none' : 'block' }}
-                            >
-                                Mensagem:
-                            </label>
+                            <label htmlFor="message">Mensagem:</label>
                             <textarea
                                 id="message"
                                 name="message"
@@ -103,10 +118,11 @@ const Contato = () => {
                                 required
                                 value={formState.message}
                                 onChange={handleInputChange}
+                                placeholder="Sua Mensagem"
                             ></textarea>
                         </div>
 
-                        <button type="submit" className={styles.submitBtn}>Enviar</button>
+                        <button type="submit" className={styles.submitBtn} ref={submitBtnRef}>Enviar</button>
                     </form>
                 </div>
             </div>

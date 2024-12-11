@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './oquefazemos.module.css';
 import img3 from "../../assets/img3.png";
 import img4 from "../../assets/img4.png";
 
 const OQueFazemos = () => {
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          const card = entry.target;
+          const image = card.querySelector(`.${styles.image}`);
+
+          if (entry.isIntersecting) {
+            card.classList.add(styles.visible);
+            image.classList.add(styles.visible); // Garantir que a imagem fique visível
+          } else {
+            card.classList.remove(styles.visible);
+            image.classList.remove(styles.visible); // Esconder a imagem novamente
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    // Selecionando todos os cards que terão a animação de visibilidade
+    const cards = document.querySelectorAll(`.${styles.card}`);
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect(); // Limpeza ao desmontar
+  }, []);
+
   return (
     <section id="nossos-servicos">
       <div className={styles.container}>

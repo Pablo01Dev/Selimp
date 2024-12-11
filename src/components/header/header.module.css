@@ -1,3 +1,13 @@
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .header {
   display: flex;
@@ -10,7 +20,8 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  animation: slideDown 0.8s ease forwards;
 }
 
 .header.scrolled {
@@ -18,11 +29,9 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
-
 .logo {
   max-height: 4rem;
 }
-
 
 .nav ul {
   display: flex;
@@ -31,13 +40,24 @@
   gap: 2rem;
   margin: 0;
   padding: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.nav ul.active {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.nav ul.inactive {
+  transform: translateX(100%);
+  opacity: 0;
 }
 
 .nav ul li a {
   color: white;
   font-size: 1rem;
   text-decoration: none;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
 }
 
 .header.scrolled .nav ul li a {
@@ -48,26 +68,18 @@
   color: #f5a623;
 }
 
-
 .menu-toggle {
   display: none;
   cursor: pointer;
   font-size: 2rem;
   color: white;
   z-index: 1100;
-  transition: transform 0.3s;
-
-  &:hover {
-    color: #f5a623;
-  }
-  @media (max-width: 768px) {
-    display: none;
-  }
+  transition: transform 0.3s ease, color 0.3s ease;
 }
 
-.menu-toggle.active {
-  display: flex;
-  justify-content: flex-start;
+.menu-toggle:hover {
+  transform: rotate(90deg);
+  color: #f5a623;
 }
 
 .header.scrolled .menu-toggle {
@@ -98,6 +110,7 @@
     padding: 0;
     list-style: none;
     gap: 2rem;
+    animation: slideDown 0.5s ease forwards;
   }
 
   .nav ul li a {
@@ -109,4 +122,3 @@
     color: #f5a623;
   }
 }
-

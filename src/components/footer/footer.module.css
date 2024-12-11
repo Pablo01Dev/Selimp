@@ -1,80 +1,83 @@
-/* Estilo Geral do Rodapé */
 .footerContainer {
   background-color: #081233;
-  color: white; /* Cor branca para texto */
-  padding: 5rem 1rem; /* Espaçamento interno */
-  font-size: 1rem; /* Tamanho padrão do texto */
-  display: flex; /* Flexbox */
-  flex-direction: column; /* Itens empilhados verticalmente */
-  align-items: center; /* Centraliza no eixo horizontal */
-  justify-content: center; /* Centraliza no eixo vertical */
-  gap: 2rem; /* Espaçamento entre seções */
+  color: white;
+  padding: 5rem 1rem;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
 }
 
-/* Seção de Informações */
 .footerInfo {
-  display: flex; /* Flexbox */
-  flex-wrap: wrap; /* Torna responsivo */
-  justify-content: center; /* Centraliza os itens */
-  gap: 4rem; /* Espaçamento entre itens */
-  text-align: center; /* Texto centralizado */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+  text-align: center;
 }
 
-/* Centralização do item no eixo vertical */
 .footerInfoItem {
-  display: flex; /* Alinha ícone e texto horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  justify-content: center; /* Centraliza horizontalmente */
-  gap: 1rem; /* Espaçamento entre ícone e texto */
-  font-size: 1rem; /* Tamanho do texto */
-  color: white; /* Garante texto branco */
-  text-decoration: none; /* Remove sublinhado */
-  height: 100%; /* Garantir que o item tenha altura para centralizar o conteúdo */
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1rem;
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  opacity: 0;
+  animation: fadeIn 1.5s 0.5s forwards;
+  transition: transform 0.3s ease, color 0.3s ease; /* Transição suave para transformação e cor */
 }
 
-/* Tamanho máximo para as imagens dentro do item */
+.footerInfoItem:hover {
+  transform: scale(1.05); /* Aumenta o tamanho do item ao passar o mouse */
+  color: #FFD700; /* Altera a cor para dourado (exemplo) */
+}
+
 .footerInfoItem img {
   max-width: 2em;
+  transition: transform 0.3s ease; /* Transição para o ícone */
 }
 
-.footerInfoItem p {
-  margin: 0;
-}
-
-/* Redes Sociais */
-.footerSocial {
-  display: flex; /* Flexbox para alinhamento horizontal */
-  gap: 1rem; /* Espaçamento entre ícones */
-}
-
-.footerSocial img {
-  width: 24px; /* Tamanho do ícone */
-  height: 24px;
-  transition: transform 0.3s; /* Animação suave no hover */
-}
-
-.footerSocial img:hover {
+.footerInfoItem img:hover {
   transform: scale(1.2); /* Aumenta o tamanho do ícone */
 }
 
-/* Direitos Autorais */
-.footerCopyright {
-  width: 100%; /* Ocupa toda a largura */
-  background-color: #0A0F20; /* Fundo azul escuro */
-  color: white; /* Texto branco */
-  padding: 1rem 1rem; /* Ajuste no padding vertical para diminuir o espaço */
-  text-align: center; /* Centraliza o texto horizontalmente */
-  border-radius: 0; /* Remove bordas arredondadas */
-  position: relative; /* Mantém dentro do fluxo normal */
-  bottom: 0; /* Posicionado na base do rodapé */
-  display: flex; /* Ativa o Flexbox */
-  justify-content: center; /* Centraliza horizontalmente */
-  align-items: center; /* Centraliza verticalmente */
-  line-height: 1.5; /* Ajuste o line-height se necessário */
+.footerSocial {
+  display: flex;
+  gap: 1rem;
 }
 
-/* Ajuste de cores para links e textos no rodapé */
+.footerSocial img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s;
+}
+
+.footerSocial img:hover {
+  transform: scale(1.2);
+}
+
+.footerCopyright {
+  width: 100%;
+  background-color: #0A0F20;
+  color: white;
+  padding: 1rem 1rem;
+  text-align: center;
+  border-radius: 0;
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.5;
+}
+
 .footerContainer p,
 .footerContainer a {
   color: white;
@@ -83,5 +86,22 @@
 .footerCopyright p {
   color: white;
   font-size: 12px;
-  margin: 0; /* Remover margens extras, se houver */
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 768px) {
+  .footerInfo {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .footerSocial {
+    justify-content: center;
+  }
 }

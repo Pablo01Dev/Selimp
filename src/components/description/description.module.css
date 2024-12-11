@@ -1,35 +1,64 @@
-/* Estilização do componente Description */
 .description {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  gap: 8rem; /* Espaçamento entre os itens */
-  padding: 10em 0 10em;
+  gap: 8rem;
   text-align: center;
+  padding: 10em 4em;
+  width: 100%; /* Ocupa 100% da largura disponível */
+  max-width: 1200px; /* Largura máxima para a container */
+  margin: 0 auto; /* Centraliza o conteúdo */
+
 }
 
 .item {
-  max-width: 400px; /* Define uma largura máxima para os blocos */
+  max-width: 400px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem; /* Espaçamento entre os elementos do bloco */
+  gap: 1rem;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 1.5s ease-in-out; /* Transition for fade-in effect */
+}
+
+.item.visible {
+  opacity: 1; /* Show the item when it becomes visible */
 }
 
 .icon {
   width: 80px;
   height: 80px;
-  object-fit: contain; /* Para ícones que podem ser imagens */
+  object-fit: contain;
 }
 
 h3 {
   font-size: 18px;
-  color: #0e246d; /* Azul escuro */
+  color: #0e246d;
   font-weight: bold;
 }
 
 p {
   font-size: 15px;
-  color: #333333; /* Cinza escuro */
-  line-height: 1.5; /* Melhor leitura */
+  color: #333333;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .description {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 5em 1rem;
+    justify-content: center;
+  }
+
+  .item {
+    max-width: 100%;
+  }
+}
+
+/* Optional: Add focus styles for accessibility */
+.item:focus,
+.item:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s ease;
 }
