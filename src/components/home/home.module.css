@@ -68,25 +68,31 @@
   }
 
   .personImage {
-    right: 5rem;
+    right: 2rem;
+  }
+
+  .textContent h2 {
+    font-size: 1.2rem;
+    margin: 0.5rem 0 0;
   }
 }
 
 @media (max-width: 992px) {
   .containerBanner {
     flex-direction: column;
+
   }
 
   .textContent {
     margin-left: 0;
-    margin-top: 2em;
-    align-items: center;
+    margin-top: 7.8em;
+    align-items: start;
   }
 
   .personImage {
     position: relative;
-    max-height: 50%;
-    margin-top: 2em;
+    max-height: 54%;
+    margin-top: 21em;
     right: 0;
   }
 }

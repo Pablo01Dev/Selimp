@@ -3,9 +3,12 @@
   flex-direction: column;
   gap: 10em;
   padding: 2em;
-  width: 100%; /* Ocupa 100% da largura disponível */
-  max-width: 1200px; /* Largura máxima para a container */
-  margin: 0 auto; /* Centraliza o conteúdo */
+  width: 100%;
+  /* Ocupa 100% da largura disponível */
+  max-width: 1200px;
+  /* Largura máxima para a container */
+  margin: 0 auto;
+  /* Centraliza o conteúdo */
 }
 
 .card {
@@ -14,11 +17,13 @@
   overflow: hidden;
   position: relative;
   opacity: 0;
-  transition: opacity 1s ease-out; /* Transição suave para opacidade */
+  transition: opacity 1s ease-out;
+  /* Transição suave para opacidade */
 }
 
 .card.visible {
-  opacity: 1; /* Torna o card visível quando entra na viewport */
+  opacity: 1;
+  /* Torna o card visível quando entra na viewport */
 }
 
 .text {
@@ -48,21 +53,33 @@
   z-index: 1;
 }
 
-.text h2, .text2 h2 {
+.text h2,
+.text2 h2 {
   font-size: 18px;
   font-weight: bold;
   margin-bottom: 16px;
   color: #0e246d;
 }
 
-.text p, .text li,
-.text2 p, .text2 li {
+.text,
+.text2 {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+
+
+.text p,
+.text li,
+.text2 p,
+.text2 li {
   font-size: 15px;
   margin-bottom: 12px;
   line-height: 1.5;
 }
 
-.text2 p, .text2 li {
+.text2 p,
+.text2 li {
   margin-left: 0;
 }
 
@@ -74,11 +91,13 @@
   z-index: 2;
   position: relative;
   opacity: 0;
-  transition: opacity 1s ease-out; /* Transição suave para opacidade */
+  transition: opacity 1s ease-out;
+  /* Transição suave para opacidade */
 }
 
 .image.visible {
-  opacity: 1; /* Torna a imagem visível quando o observador entra em ação */
+  opacity: 1;
+  /* Torna a imagem visível quando o observador entra em ação */
 }
 
 .image img {
@@ -91,15 +110,17 @@
 /* Responsividade */
 @media (max-width: 768px) {
   .container {
-    margin: 0 1em; /* Margem para garantir que o conteúdo não fique colado nas bordas */
+    margin: 0 1em;
     padding: 2em 0;
+
   }
 
   .card {
     flex-direction: column;
   }
 
-  .text, .text2 {
+  .text,
+  .text2 {
     margin-right: 0;
     margin-left: 0;
     padding: 2em;
@@ -114,12 +135,16 @@
   }
 
   /* Ajuste de fonte para telas menores usando 'vw' também */
-  .text h2, .text2 h2 {
-    font-size: 4vw; /* Ajustado para telas menores */
+  .text h2,
+  .text2 h2 {
+    font-size: 16px;
+    /* Ajustado para telas menores */
   }
 
-  .text p, .text li,
-  .text2 p, .text2 li {
-    font-size: 2.5vw; /* Ajustado para telas menores */
+  .text p,
+  .text li,
+  .text2 p,
+  .text2 li {
+    font-size: 13px;
   }
 }
