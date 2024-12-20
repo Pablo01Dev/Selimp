@@ -154,6 +154,11 @@
   border-radius: 10px;
 }
 
+.title {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 /* Responsividade */
 @media (max-width: 1024px) {
   .container {

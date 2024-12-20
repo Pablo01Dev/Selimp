@@ -63,67 +63,69 @@ const Contato = () => {
 
                     <div className={styles.espacer}></div>
 
-                    {/* Formulário atualizado */}
-                    <form
-                        className={styles.form}
-                        method="POST"
-                        action="/backend/processa_formulario.php"
-                        ref={formRef}
-                    >
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Nome:</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                value={formState.name}
-                                onChange={handleInputChange}
-                                placeholder="Seu Nome"
-                            />
-                        </div>
+                    <div>
+                        <h2 className={styles.title}>Deixe uma Mensagem!</h2>
+                        <form
+                            className={styles.form}
+                            method="POST"
+                            action="/backend/processa_formulario.php"
+                            ref={formRef}
+                        >
+                            <div className={styles.formGroup}>
+                                <label htmlFor="name">Nome:</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    value={formState.name}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu Nome"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="email">E-mail:</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                value={formState.email}
-                                onChange={handleInputChange}
-                                placeholder="Seu E-mail"
-                            />
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="email">E-mail:</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    value={formState.email}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu E-mail"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="telefone">Telefone:</label>
-                            <input
-                                type="tel"
-                                id="telefone"
-                                name="telefone"
-                                required
-                                value={formState.telefone}
-                                onChange={handleInputChange}
-                                placeholder="Seu Telefone"
-                            />
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="telefone">Telefone:</label>
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    required
+                                    value={formState.telefone}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu Telefone"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message">Mensagem:</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="4"
-                                required
-                                value={formState.message}
-                                onChange={handleInputChange}
-                                placeholder="Sua Mensagem"
-                            ></textarea>
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="message">Mensagem:</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    required
+                                    value={formState.message}
+                                    onChange={handleInputChange}
+                                    placeholder="Sua Mensagem"
+                                ></textarea>
+                            </div>
 
-                        <button type="submit" className={styles.submitBtn} ref={submitBtnRef}>Enviar</button>
-                    </form>
+                            <button type="submit" className={styles.submitBtn} ref={submitBtnRef}>Enviar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </section>
