@@ -56,7 +56,7 @@ const Contato = () => {
                     <div className={styles.wpp} ref={wppImgRef}>
                         <img src={atendente} alt="Atendente" />
                         <h2>Fale agora<br />com um especialista</h2>
-                        <a href="https://wa.me/1234567890">
+                        <a href="https://wa.me/5521964098669">
                             <img src={button} alt="Whatsapp Button" />
                         </a>
                     </div>

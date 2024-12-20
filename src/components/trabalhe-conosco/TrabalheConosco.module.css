@@ -4,15 +4,15 @@
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 2em 2em;
+  padding: 2em;
   background-color: #0a0729;
   color: rgb(255, 255, 255);
   opacity: 0;
-  transition: opacity 1.5s ease-in-out; /* Usando transição em vez de animação */
+  transition: opacity 1.5s ease-in-out;
 }
 
 .container.visible {
-  opacity: 1; /* Quando o container entrar na viewport, a opacidade muda para 1 */
+  opacity: 1;
 }
 
 .texto {
@@ -22,7 +22,7 @@
   align-items: center;
   width: 30%;
   text-align: center;
-  gap: .5em;
+  gap: 0.5em;
 }
 
 .texto h1 {
@@ -69,31 +69,45 @@
   margin-left: 10em;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
-    flex-direction: column;
+    flex-direction: column; /* Garante que os itens fiquem em coluna */
     gap: 20px;
+    padding: 5em 2em;
     margin: 1em;
-    padding: 2em 1.5em;
+    border-radius: 10px;
   }
 
   .texto {
-    width: 80%;
+    width: 100%; /* Ajusta a largura para ocupar todo o espaço disponível */
   }
 
   .imagem {
-    width: 80%;
+    width: 100%; /* Garante que a imagem também ocupe 100% da largura */
+    display: flex;
+    justify-content: center; /* Centraliza a imagem */
+    align-items: center;
+  }
+
+  .imagem img {
+    margin-top: 3em;
+    width: 80%; /* Ajusta o tamanho da imagem para caber melhor na tela */
   }
 
   .subConteiner {
+    flex-direction: column; /* Adicionado para evitar conflitos de direção */
     margin-left: 0;
   }
 
   .texto h1 {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .texto h2 {
-    font-size: 18px;
+    font-size: 13px;
+  }
+
+  .texto button {
+    font-size: 13px;
   }
 }

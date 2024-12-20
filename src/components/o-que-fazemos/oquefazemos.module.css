@@ -92,7 +92,7 @@
   position: relative;
   opacity: 0;
   transition: opacity 1s ease-out;
-  /* Transição suave para opacidade */
+
 }
 
 .image.visible {
@@ -108,43 +108,45 @@
 }
 
 /* Responsividade */
-@media (max-width: 768px) {
-  .container {
-    margin: 0 1em;
-    padding: 2em 0;
-
+@media (max-width: 1024px) {
+    .container {
+  
+      margin: 0 auto;
+      padding: 2em 0;
+      width: calc(100% - 2em);
+     
+    }
+  
+    .card {
+      flex-direction: column;
+      border-radius: 10px;
+    }
+  
+    .text,
+    .text2 {
+      margin-right: 0;
+      margin-left: 0;
+      padding: 2em;
+    }
+  
+    .text2 {
+      text-align: left;
+    }
+  
+    .image img {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  
+    .text h2,
+    .text2 h2 {
+      font-size: 16px;
+    }
+  
+    .text p,
+    .text li,
+    .text2 p,
+    .text2 li {
+      font-size: 13px;
+    }
   }
-
-  .card {
-    flex-direction: column;
-  }
-
-  .text,
-  .text2 {
-    margin-right: 0;
-    margin-left: 0;
-    padding: 2em;
-  }
-
-  .text2 {
-    text-align: left;
-  }
-
-  .image img {
-    max-width: 100%;
-  }
-
-  /* Ajuste de fonte para telas menores usando 'vw' também */
-  .text h2,
-  .text2 h2 {
-    font-size: 16px;
-    /* Ajustado para telas menores */
-  }
-
-  .text p,
-  .text li,
-  .text2 p,
-  .text2 li {
-    font-size: 13px;
-  }
-}

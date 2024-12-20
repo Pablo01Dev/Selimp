@@ -3,6 +3,7 @@
     transform: translateY(20px);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
@@ -91,17 +92,18 @@
   pointer-events: none;
 }
 
-.formGroup input:focus + label,
-.formGroup input:not(:placeholder-shown) + label,
-.formGroup textarea:focus + label,
-.formGroup textarea:not(:placeholder-shown) + label {
+.formGroup input:focus+label,
+.formGroup input:not(:placeholder-shown)+label,
+.formGroup textarea:focus+label,
+.formGroup textarea:not(:placeholder-shown)+label {
   top: -10px;
   left: 10px;
   font-size: 12px;
   color: #0E246D;
 }
 
-.formGroup input, .formGroup textarea {
+.formGroup input,
+.formGroup textarea {
   padding: 0.5rem;
   font-size: 15px;
   border: none;
@@ -111,11 +113,13 @@
   box-sizing: border-box;
 }
 
-.formGroup input:focus, .formGroup textarea:focus {
+.formGroup input:focus,
+.formGroup textarea:focus {
   outline: none;
 }
 
-.formGroup input::placeholder, .formGroup textarea::placeholder {
+.formGroup input::placeholder,
+.formGroup textarea::placeholder {
   visibility: hidden;
 }
 
@@ -153,7 +157,7 @@
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
-    margin-left: 2em;
+    margin-left: 1em;
   }
 
   .form {
@@ -165,46 +169,11 @@
     font-size: 20px;
     margin-left: 0;
   }
-}
 
-@media (max-width: 768px) {
-  .container {
-    padding: 2rem;
-    gap: 1rem;
+  .espacer {
+    visibility: hidden;
   }
 
-  .wpp img {
-    max-width: 200px;
-  }
 
-  .form {
-    width: 100%;
-    padding: 1rem;
-  }
 
-  .submitBtn {
-    font-size: 12px;
-  }
-}
-
-@media (max-width: 480px) {
-  .container {
-    padding: 1rem;
-  }
-
-  .wpp img {
-    max-width: 150px;
-  }
-
-  .wpp h2 {
-    font-size: 18px;
-  }
-
-  .form {
-    padding: 0.5rem;
-  }
-
-  .submitBtn {
-    padding: 0.5rem 1.5rem;
-  }
 }

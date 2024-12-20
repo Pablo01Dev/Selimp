@@ -9,15 +9,15 @@ function Footer() {
         <footer className={styles.footerContainer}>
           <div className={styles.footerInfo}>
             <div className={styles.footerInfoItem}>
-              <img src="../../src/assets/phone.png" alt="phone" />
+              <img src="https://png.pngtree.com/png-vector/20201028/ourmid/pngtree-phone-icon-in-solid-circle-png-image_2380227.jpg" alt="phone" />
               <p>21 2605-5923 | 21 2614-0308</p>
             </div>
             <div className={styles.footerInfoItem}>
-              <img src="../../src/assets/mail.png" alt="mail" />
+              <img src="https://e7.pngegg.com/pngimages/947/916/png-clipart-e-mail-icon-email-computer-icons-symbol-mail-icon-miscellaneous-angle.png" alt="mail" />
               <p>contato@selimp.com.br</p>
             </div>
             <div className={styles.footerInfoItem}>
-              <img src="../../src/assets/location.png" alt="local" />
+              <img src="https://w7.pngwing.com/pngs/250/324/png-transparent-placeholder-pin-location-gps-point-position-essential-icon.png" alt="local" />
               <p>São Gonçalo - RJ</p>
             </div>
             <div className={styles.footerSocial}>
