@@ -17,7 +17,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 4rem;
-  text-align: center;
+  text-align: center; /* Alinhamento centralizado por padrão */
 }
 
 .footerInfoItem {
@@ -96,12 +96,19 @@
 }
 
 @media (max-width: 768px) {
+  /* Alinhar texto à direita na versão mobile */
   .footerInfo {
     flex-direction: column;
+    text-align: right; /* Alinhar os textos à direita */
     gap: 2rem;
+    padding-right: 1rem; /* Adicionar um pequeno padding à direita para não grudar na borda */
   }
 
   .footerSocial {
     justify-content: center;
+  }
+
+  .footerInfoItem {
+    justify-content: flex-start; /* Garantir que os itens fiquem alinhados à direita */
   }
 }

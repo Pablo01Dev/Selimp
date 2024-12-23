@@ -172,6 +172,7 @@
     max-width: 500px; /* Ajuste para um tamanho mais largo */
     min-width: 320px; /* Garantir que o formulário não fique estreito em telas pequenas */
     padding: 1.5rem;
+    margin-left: -1em;
   }
 
   .wpp h2 {
