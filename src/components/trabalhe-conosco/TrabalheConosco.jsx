@@ -40,7 +40,7 @@ const TrabalheConosco = () => {
           <div className={styles.texto}>
             <h1>Trabalhe conosco!</h1>
             <h2>Venha fazer parte do nosso time!</h2>
-            <button className="button">Clique Aqui</button>
+            <button className="button" ><a href="https://wa.link/d95omu">Clique Aqui</a></button>
           </div>
           <div className={styles.imagem}>
             <img src={trabalhador} alt="trabalhador" />
