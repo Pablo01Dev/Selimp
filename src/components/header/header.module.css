@@ -49,6 +49,11 @@
   opacity: 1;
 }
 
+.logo {
+  margin-left: 1em;
+  max-width: 10em;
+}
+
 .nav ul.inactive {
   transform: translateX(100%);
   opacity: 0;
