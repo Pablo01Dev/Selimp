@@ -38,7 +38,6 @@
   display: flex;
   flex-direction: row;
   list-style: none;
-  background-color: #4dbeff;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -63,7 +62,7 @@
 }
 
 .header.scrolled .nav ul li a {
-  color: #ffffff;
+  color: #04113E;
 }
 
 .nav ul li a:hover {
@@ -74,7 +73,7 @@
   display: none;
   cursor: pointer;
   font-size: 2rem;
-  color: white;
+  color: rgb(255, 0, 0);
   z-index: 1100;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -85,7 +84,7 @@
 }
 
 .header.scrolled .menu-toggle {
-  color: #ffffff;
+  color: #04113E;
 }
 
 .menuToggle {
@@ -145,6 +144,10 @@
 
   .nav ul li a:hover {
     color: #ffffff; /* Cor de destaque ao passar o mouse */
+  }
+
+  .header.scrolled .nav ul li a {
+    color: #ffffff;
   }
     
 
