@@ -11,7 +11,7 @@
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between; 
   align-items: center;
   padding: 0 2rem;
   height: 6em;
@@ -22,6 +22,7 @@
   z-index: 1000;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
   animation: slideDown 0.8s ease forwards;
+  
 }
 
 .header.scrolled {
@@ -37,6 +38,7 @@
   display: flex;
   flex-direction: row;
   list-style: none;
+  background-color: #4dbeff;
   gap: 2rem;
   margin: 0;
   padding: 0;
@@ -61,7 +63,7 @@
 }
 
 .header.scrolled .nav ul li a {
-  color: #0e246d;
+  color: #ffffff;
 }
 
 .nav ul li a:hover {
@@ -83,42 +85,67 @@
 }
 
 .header.scrolled .menu-toggle {
-  color: #0e246d;
+  color: #ffffff;
 }
 
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+.menuToggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
 
+.menuToggle svg {
+  color: white; /* Cor padrão */
+  transition: color 0.3s ease;
+}
+
+.menuToggle svg:hover {
+  color: #f5a623; /* Cor quando passar o mouse */
+}
+
+.header.scrolled .menuToggle svg {
+  color: #0e246d; /* Cor do ícone quando o cabeçalho está rolado */
+}
+
+
+@media (max-width: 768px) {
   .nav ul {
-    display: none;
+    display: none; /* Menu oculto por padrão */
+    background-color: #4dbeff; /* Fundo claro */
+    margin-top: 6em;
+    border-radius: 0px 0px 0px 10px ;
   }
 
   .nav ul.active {
-    display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 60%;
-    height: 100%;
-    background-color: #04113E;
-    justify-content: space-around;
-    align-items: center;
-    z-index: 1000;
-    padding: 0;
-    list-style: none;
-    gap: 2rem;
-    animation: slideDown 0.5s ease forwards;
+    display: flex; /* Exibe o menu quando ativo */
+    flex-direction: column; /* Alinha itens verticalmente */
+    position: fixed; /* Fixa posição do menu */
+    top: 0; /* Início da tela */
+    right: 0; /* Encosta no lado direito */
+    width: 10%; /* Ocupa 70% da largura da tela */
+    height: 40%; /* Ocupa toda a altura */
+    background-color: #164ec9; /* Fundo com cor definida */
+    justify-content: center; /* Centraliza verticalmente os itens */
+    align-items: center; /* Centraliza horizontalmente os itens */
+    z-index: 999; /* Garante que o menu fique por cima de outros elementos */
+    padding: 7em 6em; /* Espaçamento interno */
+    gap: 1rem; /* Espaçamento entre itens */
+    animation: slideDown 0.5s ease forwards; /* Animação suave */
+    box-shadow: -2px 0 5px #00000080; /* Sombra para destaque */
   }
 
   .nav ul li a {
-    color: white;
-    font-size: 1.2rem;
+    color: white; /* Texto branco */
+    font-size: 1.2rem; /* Tamanho de fonte ajustado */
+    text-decoration: none; /* Remove sublinhado */
+    text-align: center; /* Centraliza texto */
   }
 
   .nav ul li a:hover {
-    color: #f5a623;
+    color: #ffffff; /* Cor de destaque ao passar o mouse */
   }
+    
+
 }
