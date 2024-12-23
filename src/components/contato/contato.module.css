@@ -61,7 +61,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 150%;
   max-width: 450px;
   padding: 1.5rem;
   border-radius: 8px;
