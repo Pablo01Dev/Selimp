@@ -25,7 +25,8 @@ const Contato = () => {
 
         try {
             // Enviando os dados com Axios
-            const response = await axios.post('/backend/processa_formulario.php', formState);
+            const response = await axios.post('../../.././backend/processa_formulario.php', formState);
+
 
             // Exibir mensagem de sucesso
             setStatusMessage('Mensagem enviada com sucesso!');
