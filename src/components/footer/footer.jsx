@@ -12,15 +12,16 @@ function Footer() {
           <div className={styles.footerInfo}>
             <div className={styles.footerInfoItem}>
               <img src={Phone} alt="phone" />
-              <p>21 2605-5923 | 21 2614-0308</p>
+              <a href="tel:+552126055923">(21) 2605-5923</a>
+              <a href="tel:+552126140308">(21) 2614-0308</a>
             </div>
             <div className={styles.footerInfoItem}>
               <img src={Mail} alt="mail" />
-              <p>contato@selimp.com.br</p>
+              <a href="mailto:contato@selimp.com.br">contato@selimp.com.br</a>
             </div>
             <div className={styles.footerInfoItem}>
               <img src={Local} alt="local" />
-              <p>São Gonçalo - RJ</p>
+              <a href="https://maps.app.goo.gl/D847qVoXTVe4DqNJA">São Gonçalo - RJ</a>
             </div>
             <div className={styles.footerSocial}>
               <a href="http://instagram.com/selimprj" aria-label="Instagram">
@@ -35,8 +36,8 @@ function Footer() {
         <div className={styles.footerCopyright}>
           <p>SELIMP © 1999. Site Criado por Andarilho Studio / B.A Tech Fast</p>
         </div>
-      </div>
-    </section>
+      </div >
+    </section >
   );
 }
 

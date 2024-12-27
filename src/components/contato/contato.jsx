@@ -49,6 +49,11 @@ const Contato = () => {
         };
     }, []);
 
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        // Lógica para envio dos dados de formulário (pode ser via fetch ou similar)
+    };
+
     return (
         <section id="contato">
             <div className={styles.subContainer}>
@@ -60,19 +65,18 @@ const Contato = () => {
                             <img src={button} alt="Whatsapp Button" />
                         </a>
                     </div>
-        
+
                     <div className={styles.espacer}></div>
 
                     <div>
                         <h2 className={styles.title}>Deixe uma Mensagem!</h2>
                         <form
                             className={styles.form}
-                            method="POST"
-                            action="/backend/processa_formulario.php"
+                            onSubmit={handleSubmit}
                             ref={formRef}
                         >
                             <div className={styles.formGroup}>
-                                <label htmlFor="name">Nome:</label>
+                                <label htmlFor="name"></label>
                                 <input
                                     type="text"
                                     id="name"
@@ -81,11 +85,13 @@ const Contato = () => {
                                     value={formState.name}
                                     onChange={handleInputChange}
                                     placeholder="Seu Nome"
+                                    aria-label="Nome"
+                                    aria-required="true"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="email">E-mail:</label>
+                                <label htmlFor="email"></label>
                                 <input
                                     type="email"
                                     id="email"
@@ -94,11 +100,13 @@ const Contato = () => {
                                     value={formState.email}
                                     onChange={handleInputChange}
                                     placeholder="Seu E-mail"
+                                    aria-label="E-mail"
+                                    aria-required="true"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="telefone">Telefone:</label>
+                                <label htmlFor="telefone"></label>
                                 <input
                                     type="tel"
                                     id="telefone"
@@ -107,11 +115,13 @@ const Contato = () => {
                                     value={formState.telefone}
                                     onChange={handleInputChange}
                                     placeholder="Seu Telefone"
+                                    aria-label="Telefone"
+                                    aria-required="true"
                                 />
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="message">Mensagem:</label>
+                                <label htmlFor="message"></label>
                                 <textarea
                                     id="message"
                                     name="message"
@@ -120,6 +130,8 @@ const Contato = () => {
                                     value={formState.message}
                                     onChange={handleInputChange}
                                     placeholder="Sua Mensagem"
+                                    aria-label="Mensagem"
+                                    aria-required="true"
                                 ></textarea>
                             </div>
 
