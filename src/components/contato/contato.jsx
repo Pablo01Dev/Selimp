@@ -1,6 +1,8 @@
 import React, { useState, useRef } from 'react';
 import axios from 'axios';  // Importando o Axios
 import styles from './contato.module.css';
+import atendente from "../../assets/atendente.png";  // Certifique-se de ter essa imagem no caminho correto
+import button from "../../assets/button.png";  // Certifique-se de ter essa imagem no caminho correto
 
 const Contato = () => {
     const [formState, setFormState] = useState({
@@ -11,7 +13,7 @@ const Contato = () => {
     });
 
     const [statusMessage, setStatusMessage] = useState(''); // Para mensagens de sucesso ou erro
-    const formRef = useRef(null);
+    const formRef = useRef(null);  // Referência para o formulário
 
     const handleInputChange = (e) => {
         const { name, value } = e.target;
@@ -21,10 +23,10 @@ const Contato = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();  // Impede o envio tradicional do formulário
 
-        // Enviando os dados com Axios
         try {
+            // Enviando os dados com Axios
             const response = await axios.post('/backend/processa_formulario.php', formState);
-            
+
             // Exibir mensagem de sucesso
             setStatusMessage('Mensagem enviada com sucesso!');
             formRef.current.reset();  // Limpa o formulário após envio
@@ -38,70 +40,85 @@ const Contato = () => {
         <section id="contato">
             <div className={styles.subContainer}>
                 <div className={styles.container}>
-                    <h2 className={styles.title}>Deixe uma Mensagem!</h2>
+                    <div className={styles.wpp}>
+                        <img src={atendente} alt="Atendente" />
+                        <h2>Fale agora<br />com um especialista</h2>
+                        <a href="https://wa.me/5521964098669">
+                            <img src={button} alt="Whatsapp Button" />
+                        </a>
+                    </div>
 
-                    {/* Exibir mensagem de status */}
-                    {statusMessage && <p>{statusMessage}</p>}
+                    <div className={styles.espacer}></div>
 
-                    <form
-                        className={styles.form}
-                        ref={formRef}
-                        onSubmit={handleSubmit} // Submeter com Axios
-                    >
-                        <div className={styles.formGroup}>
-                            <label htmlFor="name">Nome:</label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                required
-                                value={formState.name}
-                                onChange={handleInputChange}
-                                placeholder="Seu Nome"
-                            />
-                        </div>
+                    <div>
+                        <h2 className={styles.title}>Deixe uma Mensagem!</h2>
+                        <form
+                            className={styles.form}
+                            ref={formRef}
+                            onSubmit={handleSubmit} // Submeter com Axios
+                        >
+                            <div className={styles.formGroup}>
+                                <label htmlFor="name">Nome:</label>
+                                <input
+                                    type="text"
+                                    id="name"
+                                    name="name"
+                                    required
+                                    value={formState.name}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu Nome"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="email">E-mail:</label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                required
-                                value={formState.email}
-                                onChange={handleInputChange}
-                                placeholder="Seu E-mail"
-                            />
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="email">E-mail:</label>
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    required
+                                    value={formState.email}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu E-mail"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="telefone">Telefone:</label>
-                            <input
-                                type="tel"
-                                id="telefone"
-                                name="telefone"
-                                required
-                                value={formState.telefone}
-                                onChange={handleInputChange}
-                                placeholder="Seu Telefone"
-                            />
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="telefone">Telefone:</label>
+                                <input
+                                    type="tel"
+                                    id="telefone"
+                                    name="telefone"
+                                    required
+                                    value={formState.telefone}
+                                    onChange={handleInputChange}
+                                    placeholder="Seu Telefone"
+                                />
+                            </div>
 
-                        <div className={styles.formGroup}>
-                            <label htmlFor="message">Mensagem:</label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                rows="4"
-                                required
-                                value={formState.message}
-                                onChange={handleInputChange}
-                                placeholder="Sua Mensagem"
-                            ></textarea>
-                        </div>
+                            <div className={styles.formGroup}>
+                                <label htmlFor="message">Mensagem:</label>
+                                <textarea
+                                    id="message"
+                                    name="message"
+                                    rows="4"
+                                    required
+                                    value={formState.message}
+                                    onChange={handleInputChange}
+                                    placeholder="Sua Mensagem"
+                                ></textarea>
+                            </div>
 
-                        <button type="submit" className={styles.submitBtn}>Enviar</button>
-                    </form>
+                            <button type="submit" className={styles.submitBtn}>Enviar</button>
+                        </form>
+
+                        {/* Exibir mensagem de sucesso ou erro */}
+                        {statusMessage && (
+                            <div className={styles.statusMessage}>
+                                {statusMessage}
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </section>

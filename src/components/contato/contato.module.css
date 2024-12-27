@@ -94,11 +94,10 @@
   pointer-events: none;
 }
 
-/* O label se move para cima quando o input ou textarea estiver em foco ou preenchido */
-.formGroup input:focus + label,
-.formGroup input:not(:placeholder-shown) + label,
-.formGroup textarea:focus + label,
-.formGroup textarea:not(:placeholder-shown) + label {
+.formGroup input:focus+label,
+.formGroup input:not(:placeholder-shown)+label,
+.formGroup textarea:focus+label,
+.formGroup textarea:not(:placeholder-shown)+label {
   top: -10px;
   left: 10px;
   font-size: 12px;
@@ -121,18 +120,9 @@
   outline: none;
 }
 
-/* Placeholder será ocultado quando o campo for preenchido ou em foco */
 .formGroup input::placeholder,
 .formGroup textarea::placeholder {
-  opacity: 1;
-  transition: opacity 0.3s ease;
-}
-
-.formGroup input:focus::placeholder,
-.formGroup textarea:focus::placeholder,
-.formGroup input:not(:placeholder-shown)::placeholder,
-.formGroup textarea:not(:placeholder-shown)::placeholder {
-  opacity: 0;
+  visibility: hidden;
 }
 
 .submitBtn {
