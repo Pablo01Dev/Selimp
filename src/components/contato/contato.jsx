@@ -58,7 +58,7 @@ const Contato = () => {
                             onSubmit={handleSubmit} // Submeter com Axios
                         >
                             <div className={styles.formGroup}>
-                                <label htmlFor="name">Nome:</label>
+                                <label htmlFor="name"></label>
                                 <input
                                     type="text"
                                     id="name"
@@ -71,7 +71,7 @@ const Contato = () => {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="email">E-mail:</label>
+                                <label htmlFor="email"></label>
                                 <input
                                     type="email"
                                     id="email"
@@ -84,7 +84,7 @@ const Contato = () => {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="telefone">Telefone:</label>
+                                <label htmlFor="telefone"></label>
                                 <input
                                     type="tel"
                                     id="telefone"
@@ -97,7 +97,7 @@ const Contato = () => {
                             </div>
 
                             <div className={styles.formGroup}>
-                                <label htmlFor="message">Mensagem:</label>
+                                <label htmlFor="message"></label>
                                 <textarea
                                     id="message"
                                     name="message"

@@ -120,12 +120,8 @@
   outline: none;
 }
 
-.formGroup input::placeholder,
-.formGroup textarea::placeholder {
-  visibility: hidden;
-}
 
-.submitBtn {
+.submitBtn {  
   padding: 0.5rem 2rem;
   background-color: #0E246D;
   color: white;
