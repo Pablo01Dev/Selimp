@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './contato.module.css';
 import atendente from '../../assets/atendente.png';
 import button from '../../assets/button.png';
-import Form from './Form'; // Importando o formulário
+import Form from '.Form'; // Importando o formulário
 
 const Contato = () => {
     return (
