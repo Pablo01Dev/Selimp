@@ -24,6 +24,10 @@
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.form {
+  width: 25%;
+}
+
 .container.visible {
   animation: fadeInUp 0.8s ease forwards;
 }
@@ -57,69 +61,6 @@
   font-weight: bold;
   text-align: left;
 }
-
-.form {
-  display: flex;
-  flex-direction: column;
-  width: 150%; /* Utilizar 100% para ocupar todo o espaço disponível */
-  max-width: 600px; /* Ajuste para maior largura */
-  min-width: 300px; /* Garantir que o formulário não fique muito estreito */
-  padding: 2rem; /* Maior espaçamento interno */
-  border-radius: 8px;
-  gap: 1rem;
-  max-height: 600px;
-  overflow: auto;
-  position: relative;
-  margin: 0 auto; /* Centraliza horizontalmente */
-}
-
-.form.visible {
-  animation: fadeInUp 0.8s ease forwards;
-}
-
-.formGroup {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-}
-
-.formGroup label {
-  font-size: 14px;
-  font-weight: bold;
-  color: #888888;
-  position: absolute;
-  left: 10px;
-  top: 15px;
-  transition: 0.3s ease all;
-  pointer-events: none;
-}
-
-.formGroup input:focus+label,
-.formGroup input:not(:placeholder-shown)+label,
-.formGroup textarea:focus+label,
-.formGroup textarea:not(:placeholder-shown)+label {
-  top: -10px;
-  left: 10px;
-  font-size: 12px;
-  color: #0E246D;
-}
-
-.formGroup input,
-.formGroup textarea {
-  padding: 0.5rem;
-  font-size: 15px;
-  border: none;
-  border-radius: 8px;
-  background-color: #e7e7e7;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.formGroup input:focus,
-.formGroup textarea:focus {
-  outline: none;
-}
-
 
 .submitBtn {  
   padding: 0.5rem 2rem;
@@ -164,9 +105,9 @@
   }
 
   .form {
-    width: 100%; /* Garantir que ocupe toda a largura da tela */
-    max-width: 500px; /* Ajuste para um tamanho mais largo */
-    min-width: 320px; /* Garantir que o formulário não fique estreito em telas pequenas */
+    width: 100%; 
+    max-width: 500px; 
+    min-width: 320px; 
     padding: 1.5rem;
     margin-left: -1em;
   }

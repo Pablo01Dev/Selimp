@@ -22,9 +22,9 @@ const Contato = () => {
 
                     <div className={styles.espacer}></div>
 
-                    <div>
+                    <div className={styles.form}>
                         <h2 className={styles.title}>Deixe uma Mensagem!</h2>
-                        <Form /> {/* Usando o formulário importado */}
+                        <Form /> 
                     </div>
                 </div>
             </div>
