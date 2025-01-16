@@ -56,7 +56,7 @@ const TrabalheConosco = () => {
     const corpo = `Nome: ${nome}\nE-mail: ${email}\nTelefone: ${telefone}\n\nAnexe seu currículo`;
 
     // Criar o link mailto
-    const mailtoLink = `mailto:contato@seusite.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+    const mailtoLink = `mailto:andradeemails@gmail.com?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
 
     // Abrir o cliente de e-mail com as informações preenchidas
     window.location.href = mailtoLink;
